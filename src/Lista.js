@@ -47,7 +47,7 @@ class Lista {
 	removeEnd() {
 		let anterior = this.head;
 		let atual = this.head.proximo;
-
+		let retorno;
 		if (atual == null) {
 			return;
 		}
@@ -56,8 +56,11 @@ class Lista {
 			anterior = atual;
 			atual = atual.proximo;
 		}
+		retorno = atual;
 		atual = null;
 		anterior.proximo = null;
+		return retorno.dado;
+
 	}
 
 	isEmpty() {
