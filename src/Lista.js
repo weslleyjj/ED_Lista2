@@ -34,6 +34,7 @@ class Lista {
 	}
 
 	getAt(index){
+		
 		if (this.head.proximo == null) {
 			return null;
 		} else {
@@ -151,6 +152,21 @@ class Lista {
 				atual = atual.proximo;
 			}
 			return false;
+		}
+	}
+	removeIt(dado){
+		if (this.head.proximo == null) {
+			return null;
+		}else if(dado == this.head.proximo.dado){
+			this.removeBeginning(dado);
+		} else {
+			let anterior = this.head.proximo;
+			let atual = this.head.proximo;
+			while(atual.dado != dado){
+				anterior = atual;
+				atual = atual.proximo;
+			}
+			anterior.proximo = atual.proximo;
 		}
 	}
 
