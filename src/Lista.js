@@ -33,6 +33,24 @@ class Lista {
 		}
 	}
 
+	getAt(index){
+		if (this.head.proximo == null) {
+			return null;
+		} else {
+			let cont = 0;
+			let atual = this.head.proximo;
+			while (cont <= index) {
+				if (cont == index) {
+					return atual.dado;
+				}
+				//iteração
+				atual = atual.proximo;
+				cont++;
+			}
+		}
+		return null;
+	}
+
 	removeBeginning() {
 
 		let atual = this.head.proximo;
