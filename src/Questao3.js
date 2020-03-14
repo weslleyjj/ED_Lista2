@@ -4,16 +4,32 @@ class Questao3 {
         this.lista = [];
     }
     add(dado){
-        this.lista.unshift(dado);
+        let novaLista = [dado];
+        for(let i=0;i<this.lista.length;i++){
+            novaLista[i+1] = this.lista[i];
+        }
+        this.lista = novaLista;
     }
     append(dado){
-        this.lista.push(dado);
+        this.lista[this.lista.length] = dado;
     }
     removeBeggining(){
-        return this.lista.shift();
+        let result = this.lista[0];
+        for(let i=0;i<this.lista.length;i++){
+            this.lista[i] = this.lista[i+1];
+        }
+        return result;
+
     }
     removeLast(){
-        return this.lista.pop();
+        let arr = [];
+        let result;
+        for(let i=0;i<this.lista.length-1;i++){
+            arr[i] = this.lista[i];
+            result = arr[i];
+        }
+        this.lista = arr;
+        return result;
     }
     size(){
         return this.lista.length;
