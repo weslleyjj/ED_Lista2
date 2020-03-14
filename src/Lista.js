@@ -55,11 +55,14 @@ class Lista {
 	removeBeginning() {
 
 		let atual = this.head.proximo;
+		let result;
 		if (atual === null) {
 			return;
 		} else {
+			result = this.head.proximo;
 			this.head.proximo = atual.proximo;
 		}
+		return result.dado;
 
 	}
 
